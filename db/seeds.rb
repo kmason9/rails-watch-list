@@ -11,7 +11,9 @@ movies = JSON.parse(remote_json)
 
 
 puts "Cleaning database.."
+# Bookmark.destroy_all
 Movie.destroy_all
+
 
 puts "Creating movies.."
 movies["results"].each do |movie|
