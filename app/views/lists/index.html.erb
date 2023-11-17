@@ -6,8 +6,11 @@
 </div>
 <div class="d-flex m-4 justify-content-between">
   <% @lists.each do |list| %>
+  <div class="card-category"
+  style="background-image: url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
   <div class="lists d-flex flex-column p-4">
     <%= link_to list.name, list_path(list) %>
+  </div>
   </div>
   <% end %>
 </div>
