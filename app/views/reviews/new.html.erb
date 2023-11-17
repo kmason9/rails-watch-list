@@ -1,0 +1,6 @@
+<h2>New Review</h2>
+<%= simple_form_for [@list, @review] do |f| %>
+<%= f.input :header %>
+<%= f.input :comment %>
+<%= f.submit %>
+<% end %>

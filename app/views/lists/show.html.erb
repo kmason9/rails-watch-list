@@ -19,6 +19,12 @@
 </div>
 <% end %>
 </div>
+<h3>List Reviews</h3>
+<% @list.reviews.each do |review| %>
+<p class="fw-bold"><%= review.header %></p>
+<p class="fst-italic"><%= review.comment %></p>
+<% end %>
 <%= link_to "Back to lists", lists_path %>
 <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+<%= link_to "Write a review", new_list_review_path(@list) %>
 </div>
