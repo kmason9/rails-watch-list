@@ -15,6 +15,40 @@ li {
   list-style: none;
 }
 
-.movie-card {
-  
+
+p {
+  font-size: smaller;
+}
+
+.comment{
+  font-size: large
+}
+
+.movie-banner {
+  background-image: asset-url("reel.png");
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family:Arial, Helvetica, sans-serif
+}
+
+.lists {
+  background-image: asset-url("popcorn.png");
+  width: 270px;
+  height: 320px;
+  border-radius: 5px;
+  a {
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: rgb(230, 45, 17)
+  }
 }

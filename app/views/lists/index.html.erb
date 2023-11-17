@@ -1,6 +1,13 @@
-<%= image_tag "popcorn.png", width: 1050 %>
-<h1>My Lists</h1>
-<% @lists.each do |list| %>
-<%= link_to list.name, list_path(list) %>
-<% end %>
+<div class="movie-banner">
+  <h1 class="text-center">My Movie Lists</h1>
+</div>
+<div class="m-4">
 <%= link_to "Add new list", new_list_path %>
+</div>
+<div class="d-flex m-4 justify-content-between">
+  <% @lists.each do |list| %>
+  <div class="lists d-flex flex-column p-4">
+    <%= link_to list.name, list_path(list) %>
+  </div>
+  <% end %>
+</div>

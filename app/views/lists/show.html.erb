@@ -1,14 +1,24 @@
+<div class="container py-4 d-flex flex-column">
 <h2><%= @list.name%> Movies</h2>
+<div class="row">
 <% @list.movies.each do |movie| %>
-<div class="movie-card" style="width 18rem;">
-<img src=<%= movie.poster_url %>>
-<h3><%= movie.title %></h3>
-<h2>Rating: <%= movie.rating %></h2>
-<p><%= movie.overview %></p>
-<% bookmark = @bookmarks.find_by( list: @list, movie: movie ) %>
-<p> "<%= bookmark.comment %>"
-<%= link_to "Delete", list_path(movie), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<div class="col-md-4 my-3">
+  <div class="card bg-light h-100">
+    <img src=<%= movie.poster_url %>>
+    <div class="card-body">
+      <h3><%= movie.title %></h3>
+      <h4>Rating: <%= movie.rating.round(1) %></h4>
+      <p><%= movie.overview %></p>
+      <% bookmark = @bookmarks.find_by( list: @list, movie: movie ) %>
+      <p class="comment"> "<%= bookmark.comment %>"</p>
+    </div>
+    <div class="bg-white p-3">
+      <%= link_to "Delete", list_path(movie), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  </div>
 </div>
 <% end %>
+</div>
 <%= link_to "Back to lists", lists_path %>
 <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+</div>
