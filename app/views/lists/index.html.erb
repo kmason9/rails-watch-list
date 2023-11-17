@@ -6,9 +6,9 @@
 </div>
 <div class="d-flex m-4">
   <% @lists.each do |list| %>
-  <div class="card-category"
+  <div class="card-category d-flex justify-content-center"
   style="background-image: url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
-  <div class="lists d-flex flex-column p-4">
+  <div class="lists p-4">
     <%= link_to list.name, list_path(list) %>
   </div>
   </div>
